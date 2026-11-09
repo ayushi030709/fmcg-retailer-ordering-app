@@ -1,0 +1,27 @@
+@page { size: A4; margin: 16mm 15mm 18mm 15mm; }
+html { font-size: 9.6pt; }
+body { font-family: "Noto Sans", "Helvetica Neue", Arial, sans-serif; color: #17201c; line-height: 1.45; max-width: none; margin: 0; padding: 0; }
+header#title-block-header { border-bottom: 3px solid #0b6b53; padding-bottom: 10px; margin-bottom: 14px; }
+h1.title { font-size: 21pt; color: #0b6b53; margin: 0 0 4px; line-height: 1.2; }
+p.subtitle { font-size: 11pt; color: #5b6661; margin: 0; }
+h1 { font-size: 15pt; color: #0a5644; margin: 0 0 8px; padding-bottom: 4px; border-bottom: 1px solid #d5dbd8; break-before: auto; break-after: avoid; margin-top: 22px; }
+h1#assumptions-and-decisions, h1#ai-extraction-matching-confidence-and-failure-handling, h1#uiux-decisions-and-screens, h1#security-testing-and-performance { break-before: page; margin-top: 0; }
+h2 { font-size: 11.5pt; color: #0b6b53; margin: 16px 0 6px; break-after: avoid; }
+p, li { orphans: 3; widows: 3; }
+a { color: #0b6b53; }
+code { font-family: "DejaVu Sans Mono", Menlo, Consolas, monospace; font-size: 0.86em; background: #f1f4f2; padding: 0 3px; border-radius: 3px; }
+pre { background: #f4f6f5; border: 1px solid #e3e7e5; border-radius: 6px; padding: 8px 10px; font-size: 8.2pt; line-height: 1.4; white-space: pre-wrap; break-inside: avoid; }
+pre code { background: none; padding: 0; font-size: inherit; }
+table { border-collapse: collapse; width: 100%; margin: 8px 0 12px; font-size: 8.3pt; line-height: 1.35; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+th { background: #0b6b53; color: #fff; text-align: left; padding: 4px 6px; font-weight: 600; }
+td { border: 1px solid #d5dbd8; padding: 4px 6px; vertical-align: top; }
+tbody tr:nth-child(even) td { background: #f7f9f8; }
+figure { margin: 10px 0 14px; break-inside: avoid; text-align: center; }
+figure img { max-width: 100%; border: 1px solid #e3e7e5; border-radius: 4px; }
+figcaption { font-size: 8pt; color: #5b6661; margin-top: 4px; text-align: center; }
+.shots { display: flex; gap: 12px; align-items: flex-start; break-inside: avoid; margin: 8px 0; }
+.shots figure { flex: 1 1 0; margin: 0; }
+.shots img { width: 100%; max-height: 118mm; object-fit: contain; object-position: top; }
+img[src*="desk-"] { max-width: 92%; }

@@ -1,0 +1,33 @@
+# Render Blueprint: PostgreSQL + Dockerised FastAPI API. Frontend is deployed on Vercel (see deployment.md).
+databases:
+  - name: fmcg-ordering-db
+    plan: free
+    databaseName: fmcg
+    user: fmcg
+
+services:
+  - type: web
+    name: fmcg-ordering-api
+    runtime: docker
+    rootDir: backend
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: fmcg-ordering-db
+          property: connectionString
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: FRONTEND_ORIGIN
+        sync: false
+      - key: DEMO_MODE
+        value: "true"
+      - key: AI_PROVIDER
+        value: groq
+      - key: AI_PROVIDER_API_KEY
+        sync: false
+      - key: AI_MODEL
+        value: llama-3.3-70b-versatile

@@ -1,0 +1,33 @@
+# Local PostgreSQL + API. Run the frontend separately (see deployment.md).
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: fmcg
+      POSTGRES_PASSWORD: fmcg-local-only
+      POSTGRES_DB: fmcg_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fmcg -d fmcg_dev"]
+      interval: 3s
+      retries: 20
+
+  api:
+    build: ./backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://fmcg:fmcg-local-only@db:5432/fmcg_dev
+      JWT_SECRET_KEY: local-docker-only-not-a-secret
+      FRONTEND_ORIGIN: http://localhost:5173
+      DEMO_MODE: "true"
+      AI_PROVIDER_API_KEY: ${AI_PROVIDER_API_KEY:-}
+    ports:
+      - "8000:8000"
+
+volumes:
+  pgdata:
