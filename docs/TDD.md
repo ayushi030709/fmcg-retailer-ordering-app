@@ -3,7 +3,7 @@ title: "FMCG Retailer Ordering Platform with AI Order Capture"
 subtitle: "Technical Design Document — Isocode Labs take-home, Problem Statement 5"
 ---
 
-**GitHub repository:** <https://github.com/NGACA-Ggn/create>
+**GitHub repository:** <https://github.com/ayushi030709/fmcg-retailer-ordering-app>
 
 **Live app:** [TO FILL after deployment — see deployment.md]
 
@@ -15,7 +15,7 @@ Reviewer demo accounts (synthetic): Retailer A `9000000001`, Retailer B `9000000
 
 | Item | Location |
 |------------|----------------------------|
-| Source code (public) | <https://github.com/NGACA-Ggn/create> |
+| Source code (public) | <https://github.com/ayushi030709/fmcg-retailer-ordering-app |
 | Live application | [TO FILL after deployment] |
 | Live API + OpenAPI docs | [TO FILL after deployment] `/docs` |
 | Local setup, deployment, env var names, demo logins | `deployment.md` (repository root, also in the submission ZIP) |
